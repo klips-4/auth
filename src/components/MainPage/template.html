@@ -1,0 +1,13 @@
+<div class="MainPage__wrapper full-screen">
+    <div class="MainPage__header flex full-width flex-justify-between">
+        <span class="flex flex-center"><strong>Noname</strong></span>
+    </div>
+    <div class="CatalogBar__wrapper">
+        <CatalogBar
+                v-for="task in menubar"
+                :key="task"
+                :menu_tasks="task"
+        />
+    </div>
+
+</div>
