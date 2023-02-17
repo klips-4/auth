@@ -3,10 +3,12 @@
         <h1>Вход в систему</h1>
         <input type="text" class="input margin__bottom-m full-width"
                placeholder="Логин"
+               v-model.trim="loginForm.login"
         >
         <input type="text" class="input margin__bottom-m full-width"
                placeholder="Пароль"
+               v-model.trim="loginForm.password"
         >
-        <button class="button cursor-pointer margin__bottom-xs full-width">Войти</button>
+        <button @click.prevent="_login" class="button cursor-pointer margin__bottom-xs full-width">Войти</button>
     </div>
 </div>
