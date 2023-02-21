@@ -1,11 +1,12 @@
 <div class="MainPage__wrapper full-screen">
     <div class="MainPage__header flex full-width flex-justify-between">
-        <span class="flex flex-center"><strong>Noname</strong></span>
+        <span class="UserName flex flex-center"><strong>{{userName}}</strong></span>
+        <button class="exit-btn cursor-pointer">Выйти</button>
     </div>
     <div class="CatalogBar__wrapper">
         <CatalogBar
                 v-for="task in menubar"
-                :key="task"
+                :key="task.index"
                 :menu_tasks="task"
         />
     </div>

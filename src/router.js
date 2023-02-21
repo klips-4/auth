@@ -1,12 +1,15 @@
 import {createRouter, createWebHashHistory} from "vue-router/dist/vue-router";
 import Login from "@/components/Login/Login.vue";
 import MainPage from "@/components/MainPage/MainPage.vue";
+import CustomerRecord from "@/components/CustomerRecord/CustomerRecord";
+
 import {AuthHelpers} from "@/helpers/AuthHelpers";
 
 const routes = [
 
             {path: '/', component: MainPage, name: 'MainPage'},
             {path: '/Login', component: Login, name: 'Login'},
+            {path: '/Customers', component: CustomerRecord, name: 'CustomerRecord'},
             {path: '/:pathMatch(.*)*', redirect: '/'},
             {path: '/:pathMatch(.*)', redirect: '/'},
 
