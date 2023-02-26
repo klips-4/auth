@@ -1,10 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="AddForm__wrapper full-screen shadow flex flex-center">
+    <div class="AddForm__block padding__container-m">
+        <div v-show="step === 1" class="step">
+            <div class="flex flex-justify-end">
+                <div class=" AddForm__close
+        cursor-pointer"
+                >
+                    <router-link to="/" class="no-decoration btn-close">X</router-link>
+                </div>
+            </div>
 
-</body>
-</html>
+            <h4>Фамилия</h4>
+            <input
+                    type="text"
+                    class="input margin__bottom-m full-width"
+                    v-model="surname"
+                    name="surname">
+            <h4>Имя</h4>
+            <input
+                    type="text"
+                    class="input margin__bottom-m full-width"
+                    v-model="name"
+                    name="name">
+
+            <h4>Отчество</h4>
+            <input
+                    type="text"
+                    class="input margin__bottom-m full-width"
+                    v-model="patronymic"
+                    name="patronymic">
+
+            <h4>Телефон</h4>
+            <input
+                    type="tel"
+                    class="input margin__bottom-m full-width"
+                    v-model="telephone"
+                    name="telephone">
+
+            <button class="btn-next cursor-pointer"
+                    @click="nextStep"
+            >Следующий шаг
+            </button>
+        </div>
+        <div v-show="step === 2" class="step">
+            <div class="flex flex-justify-end">
+                <div class=" AddForm__close
+        cursor-pointer"
+                >
+                    <router-link to="/" class="no-decoration btn-close">X</router-link>
+                </div>
+            </div>
+
+
+            <h3 class="flex flex-center">Адрес</h3>
+            <h4>Город</h4>
+            <input
+                    type="text"
+                    class="input margin__bottom-m full-width"
+                    v-model="city"
+                    name="city">
+
+            <h4>Улица</h4>
+            <input
+                    type="text"
+                    class="input margin__bottom-m full-width"
+                    v-model="street"
+                    name="street">
+
+            <div class="shortInput">
+                <h4 class="flat">Квартира</h4>
+                <input type="text"
+                       class="input size"
+                       v-model="flat"
+                >
+
+                <h4 class="frame">Корпус</h4>
+                <input type="text"
+                       class="input size"
+                       v-model="frame"
+                >
+            </div>
+
+
+            <button class="btn-back cursor-pointer"
+                    @click="backStep"
+            > Предыдущий шаг
+            </button>
+
+            <button class="btn-next cursor-pointer"
+                    @click="nextStep"
+            >Следующий шаг
+            </button>
+
+
+        </div>
+    </div>
+</div>
+
+
+

@@ -8,14 +8,18 @@ export default {
   props: {
     menu_tasks: {
       type: Array,
-      default () {
+      default() {
         return []
       }
     }
   },
   data() {
-    return {
+    return {}
+  },
 
+  methods: {
+    goToMenuItem() {
+      this.$emit('goToMenuItem')
     }
   }
 

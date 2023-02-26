@@ -4,7 +4,20 @@
 
 <script>
 export default {
-  name: "CustomerRecord"
+  name: "CustomerRecord",
+  data() {
+    return {
+      step: 1
+    }
+  },
+  methods: {
+    nextStep() {
+      this.step++
+    },
+    backStep() {
+      this.step--
+    }
+  }
 }
 </script>
 

@@ -18,7 +18,9 @@ export default {
   },
 
   methods: {
-
+    goToMenuItem(index) {
+      this.$router.push({path:index})
+    }
   },
 
   computed: {
