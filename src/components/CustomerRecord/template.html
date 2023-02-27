@@ -13,32 +13,37 @@
             <input
                     type="text"
                     class="input margin__bottom-m full-width"
-                    v-model="surname"
+                    v-model.trim="registrationForm.surname"
                     name="surname">
             <h4>Имя</h4>
             <input
                     type="text"
                     class="input margin__bottom-m full-width"
-                    v-model="name"
+                    v-model.trim="registrationForm.name"
                     name="name">
 
             <h4>Отчество</h4>
             <input
                     type="text"
                     class="input margin__bottom-m full-width"
-                    v-model="patronymic"
+                    v-model.trim="registrationForm.firstname"
                     name="patronymic">
 
             <h4>Телефон</h4>
             <input
                     type="tel"
                     class="input margin__bottom-m full-width"
-                    v-model="telephone"
+                    v-model.trim="registrationForm.telephone"
                     name="telephone">
 
             <button class="btn-next cursor-pointer"
                     @click="nextStep"
             >Следующий шаг
+            </button>
+            <button :disabled="!(registrationForm.name && registrationForm.telephone)"
+                    class="btn-next cursor-pointer"
+                    @click=""
+            >Записать клиента
             </button>
         </div>
         <div v-show="step === 2" class="step">
@@ -56,28 +61,28 @@
             <input
                     type="text"
                     class="input margin__bottom-m full-width"
-                    v-model="city"
+                    v-model.trim="city"
                     name="city">
 
             <h4>Улица</h4>
             <input
                     type="text"
                     class="input margin__bottom-m full-width"
-                    v-model="street"
+                    v-model.trim="street"
                     name="street">
 
             <div class="shortInput">
-                <h4 class="flat">Квартира</h4>
-                <input type="text"
-                       class="input size"
-                       v-model="flat"
-                >
-
                 <h4 class="frame">Корпус</h4>
                 <input type="text"
                        class="input size"
-                       v-model="frame"
+                       v-model.trim="frame"
                 >
+                <h4 class="flat">Квартира</h4>
+                <input type="text"
+                       class="input size"
+                       v-model.trim="flat"
+                >
+
             </div>
 
 

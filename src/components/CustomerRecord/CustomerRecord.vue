@@ -7,7 +7,14 @@ export default {
   name: "CustomerRecord",
   data() {
     return {
-      step: 1
+      step: 1,
+      registrationForm: {
+        name: '',
+        surname: '',
+        firstname: '',
+        telephone: '',
+      },
+
     }
   },
   methods: {
