@@ -1,9 +1,12 @@
-<template src="./template.html">
-
-</template>
+<template src="./template.html"/>
 
 <script>
+import SourceService from "@/services/SourceService";
+import {AuthHelpers} from "@/helpers/AuthHelpers";
+import notification from "@/components/Notifications/Notification";
+
 export default {
+  components: {notification},
   name: "CustomerRecord",
   data() {
     return {
@@ -13,11 +16,49 @@ export default {
         surname: '',
         firstname: '',
         telephone: '',
+        last_telephone: '',
+        source: new SourceService({endpoint: 'Client'}),
+        messages: []
       },
 
     }
   },
+  beforeMount() {
+    this.source.create().then((result) => {
+      if (result.success) {
+        this.clients = {...result.data};
+      }
+    });
+  },
   methods: {
+    submit() {
+      const rec = {
+        ...this.clients, client_name: this.name, user_id: AuthHelpers.getUser(), client__surname: this.surname,
+        client_firstname: this.firstname, client_telephone:this.telephone, client_last_telephone: this.last_telephone
+      };
+      this.source.update(rec).then((result) => {
+        let timeStamp = Date.now().toLocaleString();
+        if (result.success) {
+          this.surname = '';
+          this.name = '';
+          this.telephone = "";
+          this.firstname = "";
+          this.last_telephone = "";
+          this.$emit('submit');
+          this.messages.unshift({name: 'Контакт добавлен', id:timeStamp});
+          setTimeout(() => {
+            const newMessage = [];
+            this.messages.forEach((message) => {
+              if (message.id !== timeStamp) {
+                newMessage.push(message)
+              }
+
+              this.messages = newMessage
+            })
+          }, 3000)
+        }
+      });
+    },
     nextStep() {
       this.step++
     },
@@ -28,6 +69,6 @@ export default {
 }
 </script>
 
-<style src="./style.less" lang="less">
+<style scoped src="./style.less" lang="less">
 
 </style>

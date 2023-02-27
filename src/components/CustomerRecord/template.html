@@ -27,7 +27,7 @@
                     type="text"
                     class="input margin__bottom-m full-width"
                     v-model.trim="registrationForm.firstname"
-                    name="patronymic">
+                    name="firstname">
 
             <h4>Телефон</h4>
             <input
@@ -35,6 +35,12 @@
                     class="input margin__bottom-m full-width"
                     v-model.trim="registrationForm.telephone"
                     name="telephone">
+            <h4>Дополнительный Телефон</h4>
+            <input
+                    type="tel"
+                    class="input margin__bottom-m full-width"
+                    v-model.trim="registrationForm.last_telephone"
+                    name="last_telephone">
 
             <button class="btn-next cursor-pointer"
                     @click="nextStep"
@@ -42,7 +48,7 @@
             </button>
             <button :disabled="!(registrationForm.name && registrationForm.telephone)"
                     class="btn-next cursor-pointer"
-                    @click=""
+                    @click.prevent="submit"
             >Записать клиента
             </button>
         </div>
@@ -101,5 +107,9 @@
     </div>
 </div>
 
+<notification
+        :messages="messages"
+        :timeout="5000"
+/>
 
 
