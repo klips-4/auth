@@ -1,5 +1,6 @@
-<template src="./template.html"/>
+<template src="./template.html">
 
+</template>
 <script>
 import SourceService from "@/services/SourceService";
 import {AuthHelpers} from "@/helpers/AuthHelpers";
@@ -11,24 +12,14 @@ export default {
   data() {
     return {
       step: 1,
-      registrationForm: {
-        name: '',
-        surname: '',
-        firstname: '',
-        telephone: '',
-        last_telephone: '',
-        source: new SourceService({endpoint: 'Client'}),
-        messages: []
-      },
-
+      name: '',
+      surname: '',
+      firstname: '',
+      telephone: '',
+      last_telephone: '',
+      source: new SourceService({endpoint: 'Client'}),
+      messages: []
     }
-  },
-  beforeMount() {
-    this.source.create().then((result) => {
-      if (result.success) {
-        this.clients = {...result.data};
-      }
-    });
   },
   methods: {
     submit() {
