@@ -3,24 +3,30 @@
 </template>
 
 <script>
+import CustomerRecord from "@/components/CustomerRecord/CustomerRecord";
+
 export default {
   name: "CatalogBar",
+  components:{
+    CustomerRecord
+  },
   props: {
     menu_tasks: {
       type: Array,
       default() {
         return []
-      }
+      },
     }
   },
   data() {
-    return {}
+    return {
+    }
   },
 
   methods: {
     goToMenuItem() {
       this.$emit('goToMenuItem')
-    }
+    },
   }
 
 }

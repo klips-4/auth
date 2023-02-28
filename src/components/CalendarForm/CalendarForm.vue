@@ -3,8 +3,12 @@
 </template>
 
 <script>
+import CatalogBar from "@/components/CatalogBar/CatalogBar";
+
 export default {
-  name: "CalendarForm"
+  name: "CalendarForm",
+  components: CatalogBar
+
 }
 </script>
 
