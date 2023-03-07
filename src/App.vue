@@ -1,16 +1,23 @@
 <template>
 <div class="App__wrapper">
-  <router-view></router-view>
+  <component :is="layout">
+    <router-view/>
+  </component>
 </div>
 </template>
 
 <script>
-
+import MainLayout from "@/components/Layout/MainLayout/MainLayout";
 
 export default {
   name: 'App',
   components: {
-
+    MainLayout
+  },
+  computed: {
+    layout() {
+      return (this.$route.meta.layout) + '-layout'
+    }
   }
 }
 </script>

@@ -3,6 +3,7 @@
         <span class="UserName flex flex-center"><strong>{{userName}}</strong></span>
         <button @click="logout" class="btn cursor-pointer">Выйти</button>
     </div>
+
     <div class="CatalogBar__wrapper">
         <CatalogBar
                 v-for="(task, index) in menubar"

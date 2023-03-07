@@ -14,7 +14,7 @@ export default {
   components: {CatalogBar, CustomerRecord},
   data() {
     return {
-      menubar: ['Календарь установок', 'Замеры', 'Запись клиента', 'Договора', 'Прочее'],
+      menubar: ['CalendarForm', 'Замеры', 'Запись клиента', 'Договора', 'Прочее'],
       source: new SourceService({endpoint: 'Client'}),
     }
   },
