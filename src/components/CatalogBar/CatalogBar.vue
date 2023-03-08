@@ -6,16 +6,16 @@
 
 export default {
   name: "CatalogBar",
-  props: {
-    menu_tasks: {
-      type: Array,
-      default() {
-        return []
-      },
-    }
-  },
+
   data() {
     return {
+      links: [
+        {title: 'Календарь', url: '/CalendarForm', exact: true},
+        {title: 'Замеры', url: '/MeasuringCard'},
+        {title: 'Запись', url: '/Customer'},
+        {title: 'Договора', url: '/CustomerRecord'},
+        {title: 'Прочее', url: '/Others'}
+      ]
     }
   },
 

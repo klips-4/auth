@@ -1,16 +1,5 @@
-<div class="MainPage__wrapper full-screen">
-    <div class="MainPage__header flex full-width flex-justify-between">
-        <span class="UserName flex flex-center"><strong>{{userName}}</strong></span>
-        <button @click="logout" class="btn cursor-pointer">Выйти</button>
-    </div>
-
-    <div class="CatalogBar__wrapper">
-        <CatalogBar
-                v-for="(task, index) in menubar"
-                :key="task"
-                :menu_tasks="task"
-                @goToMenuItem = 'goToMenuItem(index)'
-        />
-    </div>
+<div class="MainPage__wrapper">
 
 </div>
+
+

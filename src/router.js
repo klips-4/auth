@@ -4,6 +4,7 @@ import CustomerRecord from "@/components/CustomerRecord/CustomerRecord";
 import CalendarForm from "@/components/CalendarForm/CalendarForm";
 import MeasuringCard from "@/components/MeasuringCard/MeasuringCard";
 import MainPage from "@/components/MainPage/MainPage";
+import Others from "@/components/Others/Others";
 import {AuthHelpers} from "@/helpers/AuthHelpers";
 
 
@@ -11,10 +12,11 @@ import {AuthHelpers} from "@/helpers/AuthHelpers";
 const routes = [
 
     {path: '/Login', component: Login, name: 'Login'},
-    {path: '/', component: MainPage, name: 'MainPage'},
-    {path: '/CustomerRecord,', component: CustomerRecord, meta: {layout: 'main'}},
+    {path: '/', component: MainPage, name: 'MainPage', meta: {layout: 'main'}},
+    {path: '/Customer,', component: CustomerRecord, meta: {layout: 'main'}},
     {path: '/CalendarForm', component: CalendarForm, meta: {layout: 'main'}},
     {path: '/MeasuringCard', component: MeasuringCard, meta: {layout: 'main'}},
+    {path: '/Others', component: Others, meta: {layout: 'main'}},
     {path: '/:pathMatch(.*)*', redirect: '/'},
     {path: '/:pathMatch(.*)', redirect: '/'},
 

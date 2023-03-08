@@ -1,23 +1,35 @@
 <template>
-  <div class="MainPage__wrapper full-screen">
-    <div class="MainPage__header flex full-width flex-justify-between">
-      <span class="UserName flex flex-center"><strong>Имя</strong></span>
-      <button @click="logout" class="btn cursor-pointer">Выйти</button>
+    <div class="Sidebar">
+      <Sidebar/>
     </div>
-          <router-view />
-  </div>
+    <div class="CatalogBar__wrapper">
+      <CatalogBar/>
+    </div>
+    <router-view/>
 </template>
 
 
 <script>
 
+import CatalogBar from "@/components/CatalogBar/CatalogBar";
+import Sidebar from "@/components/Sidebar/Sidebar";
+import SourceService from "@/services/SourceService";
 
 
 export default {
   name: "MainLayout",
+  components: {CatalogBar, Sidebar},
+
+  data() {
+    return {
+      source: new SourceService({endpoint: 'Client'}),
+    }
+
+  },
+
 }
 </script>
 
-<style >
+<style src="./style.less" lang="less">
 
 </style>

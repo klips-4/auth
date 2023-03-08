@@ -1,4 +1,13 @@
-<div class="CatalogBar__menu flex flex-center full-width ">
-    <router-link :to="'/' + menu_tasks" class="no-decoration"> {{ menu_tasks }}</router-link>
+<div class="CatalogBar__menu flex flex-justify-around full-width">
+    <router-link class="flex-justify-around no-decoration"
+            v-for="link in links"
+            :key="link.url"
+            tag="li"
+            active-class="active"
+            :to="link.url"
+            :exact="link.exact"
+    >
+        <div class="link padding__container-s flex flex-center full-size">{{ link.title }}</div>
+    </router-link>
 </div>
 
