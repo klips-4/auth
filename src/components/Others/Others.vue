@@ -1,10 +1,15 @@
 <template>
-<h1>Прочее</h1>
+  <div class="Content__wrapper">
+    <h1>Прочее</h1>
+  </div>
 </template>
 
 <script>
+
 export default {
-  name: "OthersPAge"
+  name: "OthersPage",
+
+
 }
 </script>
 

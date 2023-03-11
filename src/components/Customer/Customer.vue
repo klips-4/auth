@@ -8,7 +8,7 @@ import notification from "@/components/Notifications/Notification";
 
 export default {
   components: {notification},
-  name: "CustomerRecord",
+  name: "CustomerPage",
   data() {
     return {
       step: 1,
@@ -17,6 +17,10 @@ export default {
       firstname: '',
       telephone: '',
       last_telephone: '',
+      street: '',
+      city: '',
+      frame: '',
+      flat: '',
       source: new SourceService({endpoint: 'Client'}),
       messages: []
     }

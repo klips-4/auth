@@ -4,7 +4,7 @@
 
 <script>
 import CatalogBar from "@/components/CatalogBar/CatalogBar";
-import CustomerRecord from "@/components/CustomerRecord/CustomerRecord";
+import CustomerRecord from "@/components/Customer/Customer";
 
 
 

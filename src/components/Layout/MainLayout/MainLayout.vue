@@ -6,6 +6,7 @@
       <CatalogBar/>
     </div>
     <router-view/>
+
 </template>
 
 

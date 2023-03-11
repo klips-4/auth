@@ -12,8 +12,8 @@ export default {
       links: [
         {title: 'Календарь', url: '/CalendarForm', exact: true},
         {title: 'Замеры', url: '/MeasuringCard'},
-        {title: 'Запись', url: '/Customer'},
-        {title: 'Договора', url: '/CustomerRecord'},
+        {title: 'Запись клиента', url: '/Customer'},
+        {title: 'Договора', url: '/Cu'},
         {title: 'Прочее', url: '/Others'}
       ]
     }

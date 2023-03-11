@@ -9,6 +9,9 @@
                placeholder="Пароль"
                v-model.trim="loginForm.password"
         >
-        <button @click.prevent="_login" class="button cursor-pointer margin__bottom-xs full-width">Войти</button>
+        <button :disabled="!(loginForm.login && loginForm.password)"
+                @click.prevent="_login"
+                class="button cursor-pointer margin__bottom-xs full-width">
+            Войти</button>
     </div>
 </div>

@@ -1,0 +1,109 @@
+<div class="AddForm__wrapper full-size shadow flex flex-center">
+    <div v-show="step === 1" class="AddForm__block padding__container-m step">
+
+            <div class="flex flex-justify-end">
+                <div class=" AddForm__close
+        cursor-pointer"
+                >
+                    <router-link to="/" class="no-decoration btn-close">X</router-link>
+                </div>
+            </div>
+
+            <h4>Фамилия</h4>
+            <input
+                    type="text"
+                    class="input margin__bottom-m full-width"
+                    v-model.trim="surname"
+                    name="surname">
+            <h4>Имя</h4>
+            <input
+                    type="text"
+                    class="input margin__bottom-m full-width"
+                    v-model.trim="name"
+                    name="name">
+
+            <h4>Отчество</h4>
+            <input
+                    type="text"
+                    class="input margin__bottom-m full-width"
+                    v-model.trim="firstname"
+                    name="firstname">
+
+            <h4>Телефон</h4>
+            <input
+                    type="tel"
+                    class="input margin__bottom-m full-width"
+                    v-model.trim="telephone"
+                    name="telephone">
+            <h4>Дополнительный Телефон</h4>
+            <input
+                    type="tel"
+                    class="input margin__bottom-m full-width"
+                    v-model.trim="last_telephone"
+                    name="last_telephone">
+
+            <button class="btn-next cursor-pointer"
+                    @click="nextStep"
+            >Следующий шаг
+            </button>
+        </div>
+        <div v-show="step === 2" class="AddForm__block-last padding__container-l step">
+
+                <div class="flex flex-justify-end">
+                    <div class=" AddForm__close
+        cursor-pointer"
+                    >
+                        <router-link to="/" class="no-decoration btn-close">X</router-link>
+                    </div>
+                </div>
+
+
+                <h3 class="flex flex-center">Адрес</h3>
+                <h4>Город</h4>
+                <input
+                        type="text"
+                        class="input margin__bottom-m full-width"
+                        v-model.trim="city"
+                        name="city">
+
+                <h4>Улица</h4>
+                <input
+                        type="text"
+                        class="input margin__bottom-m full-width"
+                        v-model.trim="street"
+                        name="street">
+
+                <div class="shortInput">
+                    <h4 class="frame">Корпус</h4>
+                    <input type="text"
+                           class="input size"
+                           v-model.trim="frame"
+                    >
+                    <h4 class="flat">Квартира</h4>
+                    <input type="text"
+                           class="input size"
+                           v-model.trim="flat"
+                    >
+
+                </div>
+
+                <button class="btn-back cursor-pointer"
+                        @click="backStep"
+                > Предыдущий шаг
+                </button>
+
+                <button :disabled="!(name && telephone)"
+                        class="btn-add cursor-pointer"
+                        @click.prevent="submit"
+                >Записать клиента
+                </button>
+            </div>
+        </div>
+
+
+<notification
+        :messages="messages"
+        :timeout="5000"
+/>
+
+

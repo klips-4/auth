@@ -17,11 +17,19 @@
   }
 
   &__block {
-    width: 450px;
+    width: 470px;
     height: 460px;
     border: 2px solid gray;
     background: aliceblue;
     border-radius: 10px;
+
+    &-last {
+      width: 470px;
+      height: 360px;
+      border: 2px solid gray;
+      background: aliceblue;
+      border-radius: 10px;
+    }
   }
 }
 
@@ -41,8 +49,6 @@
     font-size: 15px;
     border-radius: 5px;
     margin-top: 15px;
-    margin-left: 20px;
-
 
     color: white;
     text-align: center;
@@ -59,6 +65,20 @@
     border-radius: 5px;
     margin-top: 15px;
 
+    color: white;
+    text-align: center;
+    transition: 0.3s;
+  }
+  &add {
+    display: inline-block;
+    width: 140px;
+    background: rgb(19, 95, 231);
+    height: 35px;
+    border: 2px solid #999;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 155px;
 
     color: white;
     text-align: center;
@@ -85,6 +105,8 @@
 
 .shortInput {
   display: flex;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .flat {

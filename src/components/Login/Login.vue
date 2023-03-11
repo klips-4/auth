@@ -29,6 +29,9 @@ export default {
           const res = result.data;
           AuthHelpers.login(false, res.id, res);
         }
+        else {
+          alert('Не верно указан логин или пароль')
+        }
       });
     },
   }
